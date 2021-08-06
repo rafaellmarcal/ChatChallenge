@@ -31,9 +31,7 @@ onde cada usuário ao se conectar deve somente fornercer um nome de usuário e a
  * <strong>Conectando clientes:</strong><br/>
   1 - Para conectarmos mais clientes, basta navergamos até o diretório: `ChatChallenge-master\src\ChatChallenge.ClientSide\bin\Debug\netcoreapp3.1` e executar
   `ChatChallenge.ClientSide.exe`, independente do tipo de inicialização.<br/>
-  
-  <br/><br/>
-  
+   
   * <strong>Observações:</strong><br/>
   1 - O servidor está apontado para `127.0.0.1` na porta `5200`. Caso a porta já esteja em uso, a mesma pode ser alterada no projeto `ChatChallenge.Resources` classe `ChatChallengeConstants` na propriedade `SERVER_PORT`.<br/>
   2 - No Visual Studio já teremos ao menos um cliente conectado ao iniciar a aplicação.<br/>
