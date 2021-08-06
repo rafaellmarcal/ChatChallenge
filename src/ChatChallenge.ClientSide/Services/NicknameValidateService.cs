@@ -14,7 +14,7 @@ namespace ChatChallenge.ClientSide.Services
 
         public NicknameValidateService()
         {
-            _buffer = new byte[1024];
+            _buffer = new byte[1024 * 4];
         }
 
         public void ValidateNickname(Client client, NetworkStream stream)

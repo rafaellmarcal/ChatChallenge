@@ -11,7 +11,7 @@ namespace ChatChallenge.ClientSide.Services
 
         public ServerMessageReceiver()
         {
-            _buffer = new byte[1024];
+            _buffer = new byte[1024 * 4];
         }
 
         public void WriteMessageReceived(object tcpClientObject)

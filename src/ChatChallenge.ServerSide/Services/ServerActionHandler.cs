@@ -18,7 +18,6 @@ namespace ChatChallenge.ServerSide.Services
             TcpClientHandler tcpClientHandler,
             INicknameValidateService nicknameValidateService)
         {
-            _buffer = new byte[1024];
             _tcpClientHandler = tcpClientHandler;
             _nicknameValidateService = nicknameValidateService;
         }
@@ -37,13 +36,13 @@ namespace ChatChallenge.ServerSide.Services
             {
                 try
                 {
-                    _buffer = new byte[1024];
+                    _buffer = new byte[client.ReceiveBufferSize];
                     NetworkStream stream = client.GetStream();
-                    int messageBytes = stream.Read(_buffer, 0, _buffer.Length);
+                    int messageBytes = stream.Read(_buffer, 0, client.ReceiveBufferSize);
 
                     if (messageBytes != 0)
                     {
-                        string messageFromClient = Encoding.UTF8.GetString(_buffer, 0, messageBytes);
+                        string messageFromClient = Encoding.ASCII.GetString(_buffer, 0, messageBytes);
 
                         DoAction(client, messageFromClient, stream);
                     }
